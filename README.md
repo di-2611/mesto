@@ -11,8 +11,7 @@
 - JS
 - БЭМ
 
-**Figma**
-
-* [Ссылка на макет в Figma]()
+# Ссылка на GitHub Pages:
+https://di-2611.github.io/mesto/
 
 
