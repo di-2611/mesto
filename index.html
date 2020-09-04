@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pages/index.css">
+    <title>Mesto</title>
+</head>
+<body>
+    <div class="page">
+        
+        <header class="header page__header">
+            <img class="header__logo" src="./images/logo.svg" alt="Логотип">
+            <hr class="header__line"></hr>
+        </header>
+
+        <main class="content">
+
+            <section class="profile content__profile">
+                <div class="profile__main-content">
+                    <img class="profile__avatar" src="./images/avatar.jpg" alt="аватар">
+                    <div class="profile__profile-info">
+                        <div class="profile__name-info">
+                          <h1 class="profile__name">Жак-Ив Кусто</h1>
+                            <button class="profile__edit-button" aria-label="Редактировать"></button>
+                        </div>
+                        <p class="profile__profession">Исследователь океана</p>
+                    </div>
+                </div>
+                <form class="profile__button">
+                    <button class="profile__add-button"></button>
+                </form>
+            </section>
+
+            <section class="elements content__elements">
+                <ul class="elements__photo-grid">
+                    <li class="elements__element">
+                        <img class="elements__image" src="./images/Karachaevsk.jpg" alt="Крепость">
+                        <div class="elements__groups">
+                            <p class="elements__subtitle">Карачаевск</p>
+                            <img class="elements__group" src="./images/hurts.svg" alt="Сердце">
+                        </div>
+                    </li>
+                    <li class="elements__element">
+                        <img class="elements__image" src="./images/elbrus.png" alt="Гора">
+                        <div class="elements__groups">
+                            <p class="elements__subtitle">Гора Эльбрус</p>
+                            <img class="elements__group" src="./images/hurts.svg" alt="Сердце">
+                        </div>
+                    </li>
+                    <li class="elements__element">
+                        <img class="elements__image" src="./images/dombay.png" alt="Снежная гора">
+                        <div class="elements__groups">
+                            <p class="elements__subtitle">Домбай</p>
+                            <img class="elements__group" src="./images/hurts.svg" alt="Сердце">
+                        </div>
+                    </li>
+                    <li class="elements__element">
+                        <img class="elements__image" src="./images/elbrus.png" alt="Гора">
+                        <div class="elements__groups">
+                            <p class="elements__subtitle">Гора Эльбрус</p>
+                            <img class="elements__group" src="./images/hurts.svg" alt="Сердце">
+                        </div>
+                    </li>
+                    <li class="elements__element">
+                        <img class="elements__image" src="./images/dombay.png" alt="Снежная гора">
+                        <div class="elements__groups">
+                            <p class="elements__subtitle">Домбай</p>
+                            <img class="elements__group" src="./images/hurts.svg" alt="Сердце">
+                        </div>
+                    </li>
+                    <li class="elements__element">
+                        <img class="elements__image" src="./images/Karachaevsk.jpg" alt="Крепость">
+                        <div class="elements__groups">
+                            <p class="elements__subtitle">Карачаево-Черкессия</p>
+                            <img class="elements__group" src="./images/hurts.svg" alt="Сердце">
+                        </div>
+                    </li>
+                </ul>
+          </section>
+
+          <section class="popup">
+            <div class="popup__container">
+                <img class="popup__close" src="./images/Close Icon.png" alt="Закрыть попап">
+                <form class="popup__content">
+                    <h2 class="popup__title">Редактировать профиль</h2>
+                    <input class="popup__name" type="text" alt="Жак-Ив Кусто" name="name">
+                    <input class="popup__profession" type="text" alt="Исследователь океана" name="profession">
+                    <input class="popup__submit" type="submit" name="submit" value="Сохранить">
+                </form>
+            </div>
+         </section>
+
+        </main>
+
+        <footer class="footer page__footer">
+            <p class="footer__copyright">&copy; 2020. Диана Юдина</p>
+        </footer>
+
+    </div>
+
+    <script src="./scripts/index.js" defer></script>
+
+</body>
+</html>
