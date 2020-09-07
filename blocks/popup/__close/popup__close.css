@@ -4,7 +4,7 @@
     position: absolute;
     top: -38px;
     right: -38px;
-    background-image: url(../../../images/Close\ Icon.png);
+    background-image: url(../../../images/Close.svg);
     background-repeat: no-repeat;
     border: none;
     background-color: transparent;
@@ -19,3 +19,4 @@
         width: 30px;
         height: 30px;
     }
+}

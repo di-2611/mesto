@@ -1,4 +1,4 @@
-.popup__button {
+.popup__input {
     width: 358px;
     font-family: inherit;
     font-style: normal;
@@ -15,6 +15,7 @@
     padding-bottom: 13.26px;
 }
 @media (max-width : 759px) {
-    .popup__button {
+    .popup__input  {
         width: 200px;
     }
+}
