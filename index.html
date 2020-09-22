@@ -31,52 +31,11 @@
 
             <section class="elements content__elements">
                 <ul class="elements__photo-grid">
-                    <li class="element">
-                        <img class="element__image" src="./images/Karachaevsk.jpg" alt="Крепость">
-                        <div class="element__groups">
-                            <p class="element__subtitle">Карачаевск</p>
-                            <button class="element__group" aria-label="Лайкнуть" type="button"></button>
-                        </div>
-                    </li>
-                    <li class="element">
-                        <img class="element__image" src="./images/elbrus.png" alt="Гора">
-                        <div class="element__groups">
-                            <p class="element__subtitle">Гора Эльбрус</p>
-                            <button class="element__group" aria-label="Лайкнуть" type="button"></button>
-                        </div>
-                    </li>
-                    <li class="element">
-                        <img class="element__image" src="./images/dombay.png" alt="Снежная гора">
-                        <div class="element__groups">
-                            <p class="element__subtitle">Домбай</p>
-                            <button class="element__group" aria-label="Лайкнуть" type="button"></button>
-                        </div>
-                    </li>
-                    <li class="element">
-                        <img class="element__image" src="./images/elbrus.png" alt="Гора">
-                        <div class="element__groups">
-                            <p class="element__subtitle">Гора Эльбрус</p>
-                            <button class="element__group" aria-label="Лайкнуть" type="button"></button>
-                        </div>
-                    </li>
-                    <li class="element">
-                        <img class="element__image" src="./images/dombay.png" alt="Снежная гора">
-                        <div class="element__groups">
-                            <p class="element__subtitle">Домбай</p>
-                            <button class="element__group" aria-label="Лайкнуть" type="button"></button>
-                        </div>
-                    </li>
-                    <li class="element">
-                        <img class="element__image" src="./images/Karachaevsk.jpg" alt="Крепость">
-                        <div class="element__groups">
-                            <p class="element__subtitle">Карачаево-Черкессия</p>
-                            <button class="element__group" aria-label="Лайкнуть" type="button"></button>
-                        </div>
-                    </li>
-                </ul>
-          </section>
 
-          <section class="popup">
+                </ul>
+            </section>
+
+          <section class="popup popup_type_edit">
             <div class="popup__container">
                 <button class="popup__close" aria-label="Закрыть" type="button"></button>
                 <form class="popup__content" name="profileInfo">
@@ -88,6 +47,26 @@
             </div>
          </section>
 
+         <section class="popup popup_type_add">
+            <div class="popup__container">
+                <button class="popup__close" aria-label="Закрыть" type="button"></button>
+                <form class="popup__content" name="new-place">
+                    <h2 class="popup__title">Новое место</h2>
+                    <input class="popup__input popup__input_place" type="text" name="place-name" placeholder="Название">
+                    <input class="popup__input popup__input_link" type="text" name="link" placeholder="Ссылка на картинку">
+                    <button class="popup__submit" aria-label="Создать">Создать</button>
+                </form>
+            </div>
+         </section>
+
+         <section class="popup popup_type_image">
+            <div class="popup__container popup__container_size">
+                <button class="popup__close popup__close_position" aria-label="Закрыть" type="button"></button>
+                <img class="popup__image" src="" alt="">
+                <p class="popup__image-title">Алтай</p>
+            </div>
+         </section>
+
         </main>
 
         <footer class="footer page__footer">
@@ -95,6 +74,19 @@
         </footer>
 
     </div>
+
+    <template class="elements__template">
+
+            <li class="element">
+                <img class="element__image" src="" alt="">
+                <div class="element__groups">
+                    <p class="element__subtitle"></p>
+                    <button class="element__group" aria-label="Лайкнуть" type="button"></button>
+                </div>
+                <button class="element__delete" aria-label="Удалить" type="button"></button>
+            </li>
+
+    </template>
 
     <script src="./scripts/index.js" defer></script>
 

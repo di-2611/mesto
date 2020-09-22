@@ -8,4 +8,8 @@
 }
 .element__group:hover {
     opacity: .6;
+    border: none;
+}
+.element__group:focus {
+    outline: none;
 }
