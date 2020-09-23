@@ -6,5 +6,8 @@
     height: 100%;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
- }
+    transition-property:  opacity, visibility;  
+    transition-duration: .3s, .3s;              
+    transition-delay: .15s, .15s; 
+    transition-timing-function: linear;
+    }
