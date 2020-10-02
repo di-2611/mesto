@@ -133,6 +133,26 @@ const addCard = (name, link) => {
   elementsPhotoGrid.prepend(cardname);
 };
 
+ const popupCloseByClickOnOverlay = (event) => {
+
+  if ((event.target !== event.currentTarget) || (event.key === "Esc")) {
+    return
+  }
+  closePopup(editPopup);
+  closePopup(addPopup);
+  closePopup(imagePopup);
+ };
+
+ const popupCloseByClickOnEscape = (event) => {
+
+  if (event.key === "Escape") {
+  closePopup(editPopup);
+  closePopup(addPopup);
+  closePopup(imagePopup);
+ }
+};
+
+
 popupOpenButton.addEventListener("click", () => {
   openPopup(editPopup);
 });
@@ -151,21 +171,10 @@ popupCloseImgButton.addEventListener("click", () => {
 });
 formElementEdit.addEventListener("submit", formSubmitEdit);
 formElementAdd.addEventListener("submit", formSubmitAdd);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+editPopup.addEventListener('click', popupCloseByClickOnOverlay);
+addPopup.addEventListener('click', popupCloseByClickOnOverlay);
+imagePopup.addEventListener('click', popupCloseByClickOnOverlay);
+document.addEventListener('keydown', popupCloseByClickOnEscape);
 
 
 

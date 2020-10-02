@@ -13,9 +13,21 @@
     border: 0;
     padding: 0;
 }
+
 .popup__submit:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+.form__submit:disabled {
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid #000000;
+    opacity: 0.2;
+  }
+
 @media (max-width : 759px) {
     .popup__submit {
         width: 200px;
