@@ -9,7 +9,6 @@ class Card {
     this._cardSelector = cardSelector;
     this._openPopupImg = openPopupImg;
   }
-
   _getTemplate() {
     // забираем размеку из HTML и клонируем элемент
     const cardElement = document
@@ -36,15 +35,9 @@ class Card {
   }
 
   _setListeners() {
-    this._element
-      .querySelector(".element__delete")
-      .addEventListener("click", () => this._handleDeleteCard());
-    this._element
-      .querySelector(".element__group")
-      .addEventListener("click", () => this._handleLikeCard());
-    this._element
-      .querySelector(".element__image")
-      .addEventListener("click", () => this._handlePreviewPicture());
+    this._element.querySelector(".element__delete").addEventListener("click", this._handleDeleteCard.bind(this));
+    this._element.querySelector(".element__group").addEventListener("click", this._handleLikeCard.bind(this));
+    this._element.querySelector(".element__image").addEventListener("click", this._handlePreviewPicture.bind(this));
   }
 
   generateCard() {
