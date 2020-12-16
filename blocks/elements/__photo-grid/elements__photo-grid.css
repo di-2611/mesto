@@ -6,7 +6,7 @@
     padding: 0;
 
 }
-@media (max-width : 320px) {
+@media (max-width: 320px) {
     .elements__photo-grid {
         display: grid;
         gap: 20px;

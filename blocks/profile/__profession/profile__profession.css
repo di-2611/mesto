@@ -11,7 +11,7 @@
     overflow: hidden;
     max-width: 318px;
 }
-@media (max-width : 759px) {
+@media (max-width: 759px) {
     .profile__profession {
         font-size: 14px;
         line-height: 17px;
