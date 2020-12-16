@@ -2,8 +2,8 @@
     margin: auto;
     margin-bottom: 66px;
 }
-@media (max-width :320px) {
+@media (max-width:320px) {
     .content__elements {
         margin-bottom: 48px;
-    } 
+    }
 }
