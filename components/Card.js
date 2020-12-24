@@ -1,14 +1,14 @@
 class Card {
-  constructor(data, cardSelector, openPopupImg) {
+  constructor({ data, handleCardClick }, cardSelector ) {
     this._name = data.name;
     this._link = data.link;
-    this._cardSelector = cardSelector;
-    this._openPopupImg = openPopupImg;
+    this._card = cardSelector;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
     const cardElement = document
-      .querySelector(this._cardSelector)
+      .querySelector(this._card)
       .content.querySelector(".element")
       .cloneNode(true);
 
@@ -56,8 +56,8 @@ class Card {
       .classList.toggle("element__group_like");
   }
 
-  _handlePreviewPicture() {
-    this._openPopupImg(this._name, this._link);
+ _handlePreviewPicture() {
+    this._handleCardClick(this._name, this._link);
   }
 }
 

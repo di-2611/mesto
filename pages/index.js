@@ -13,34 +13,33 @@ import {
   formPlace,
   formProfile,
   initialCards,
-} from "../components/Config.js";
+  cardsTemplate,
+} from "../utills/config.js";
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import Section from "../components/Section.js";
-import PopupWithImage from "../components/popup-with-image.js";
-import PopupWithForm from "../components/popup-with-form.js";
-import UserInfo from "../components/user-info.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import UserInfo from "../components/UserInfo.js";
 
-const openPopupImg = (name, link) => {
-  const popupPhotoSub = document.querySelector(".popup__image-title");
-  const popupPhotoImage = document.querySelector(".popup__image");
-  popupPhotoSub.textContent = name;
-  popupPhotoImage.alt = name;
-  popupPhotoImage.src = link;
-  popupImage.open(imagePopup);
-};
+function createCard(item) {
+  const card = new Card({
+    data: item,
+    handleCardClick: (name, link) => {
+      popupImage.openimage(name, link)
+    },
+  },
+  cardsTemplate);
+  return card.generateCard();
+}
 
 // Экземпляр класса Section - отрисовка элементов на странице
+
 const cardsList = new Section(
   {
     items: initialCards,
     renderer: (item) => {
-      const card = new Card(
-        item,
-        ".elements__template_type_default",
-        openPopupImg
-      );
-      const cardElement = card.generateCard();
+      const cardElement = createCard(item)
       cardsList.addItem(cardElement);
     },
   },
@@ -48,16 +47,10 @@ const cardsList = new Section(
 );
 cardsList.renderItems();
 
-// Экземпляр класса PopupWithForm - форма добавления новой карточки
 const popupPlaceForm = new PopupWithForm({
   popupSelector: addPopup,
   handleFormSubmit: (formData) => {
-    const card = new Card(
-      formData,
-      ".elements__template_type_default",
-      openPopupImg
-    );
-    const element = card.generateCard();
+    const element = createCard(formData);
     cardsList.addItem(element);
   },
 });
@@ -100,6 +93,9 @@ popupOpenAddButton.addEventListener("click", () => {
   popupPlaceForm.open(addPopup);
   formPlaceValidator.hideFormErrors();
 });
+
+
+
 
 
 

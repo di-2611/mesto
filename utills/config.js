@@ -19,6 +19,8 @@ export const validationConfig = {
   export const formPlace = document.querySelector(".popup__content-add");
   export const formProfile = document.querySelector(".popup__content-edit");
 
+  export const cardsTemplate = ".elements__template_type_default";
+
   export const initialCards = [
     {
       name: "Архыз",
