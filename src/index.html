@@ -9,20 +9,23 @@
     <div class="page">
         
         <header class="header page__header">
-            <img class="header__logo" src="<%=require('../images/logo.svg')%>" alt="Логотип">
+            <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Логотип">
         </header>
 
         <main class="content">
 
             <section class="profile content__profile">
                 <div class="profile__main-content">
-                    <img class="profile__avatar" src="<%=require('../images/avatar.jpg')%>" alt="аватар">
+                    <div class="profile__black">
+                        <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="аватар">
+                        <button class="profile__avatar-edit" type="button" aria-label="Редактировать аватар"></button>
+                    </div>
                     <div class="profile__profile-info">
                         <div class="profile__name-info">
-                          <h1 class="profile__name">Жак-Ив Кусто</h1>
+                          <h1 class="profile__name"></h1>
                             <button class="profile__edit-button" aria-label="Редактировать" type="button"></button>
                         </div>
-                        <p class="profile__profession">Исследователь океана</p>
+                        <p class="profile__profession"></p>
                     </div>
                 </div>
                 <button class="profile__add-button" type="button" aria-label="Открыть"></button>
@@ -43,7 +46,7 @@
                     <span class="popup__input-error" id="sign-in-name-error"></span>
                     <input class="popup__input popup__input_profession" type="text" name="profession" id="sign-in-prof" required minlength="2" maxlength="200" placeholder="Вид деятельности">
                     <span class="popup__input-error" id="sign-in-prof-error"></span>
-                    <button class="popup__submit" aria-label="Сохранить">Сохранить</button>
+                    <button class="popup__submit popup__submit-save" aria-label="Сохранить">Сохранить</button>
                 </form>
             </div>
          </section>
@@ -65,10 +68,32 @@
          <section class="popup popup_type_image">
             <div class="popup__container popup__container_size">
                 <button class="popup__close popup__close_position" aria-label="Закрыть" type="button"></button>
-                <img class="popup__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="картинка">
+                <img class="popup__image" src="#" alt="картинка">
                 <p class="popup__image-title">Алтай</p>
             </div>
          </section>
+
+         <section class="popup popup_type_delete">
+            <div class="popup__container">
+                <button class="popup__close" aria-label="Закрыть" type="button"></button>
+                <form class="popup__content popup__content-delete" name="delete" novalidate>
+                    <h2 class="popup__title popup__title_down">Вы уверены?</h2>
+                    <button class="popup__submit" aria-label="Да">Да</button>
+                </form>
+            </div>
+         </section>
+
+         <section class="popup popup_type_avatar-update">
+            <div class="popup__container">
+                <button class="popup__close popup__close-avatar" aria-label="Закрыть" type="button"></button>
+                <form class="popup__content popup__content-avatarupdate" name="update" novalidate>
+                    <h2 class="popup__title">Обновить аватар</h2>
+                    <input class="popup__input popup__input_link-avatar" type="url" name="link" id="sign-in-url" placeholder="Ссылка на картинку" required>
+                    <span class="popup__input-error" id="sign-in-url-error"></span>
+                    <button class="popup__submit" aria-label="Сохранить">Сохранить</button>
+                </form>
+            </div>
+         </section>-->
 
         </main>
 
@@ -84,7 +109,10 @@
                 <img class="element__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="картинка">
                 <div class="element__groups">
                     <p class="element__subtitle"></p>
-                    <button class="element__group" aria-label="Лайкнуть" type="button"></button>
+                    <div class="element__likecontainer">
+                        <button class="element__group" aria-label="Лайкнуть" type="button"></button>
+                        <p class="element__likecount">1</p>
+                    </div>
                 </div>
                 <button class="element__delete" aria-label="Удалить" type="button"></button>
             </li>

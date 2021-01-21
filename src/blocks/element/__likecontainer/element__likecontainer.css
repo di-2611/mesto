@@ -1,0 +1,5 @@
+.element__likecontainer {
+    display: flex;
+    max-width: 22px;
+    flex-direction: column;
+}
