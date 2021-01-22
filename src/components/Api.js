@@ -1,6 +1,4 @@
-import { url, token } from "../utills/config.js";
-
-class Api {
+export default class Api {
   constructor({ baseUrl, headers }) {
     this.url = baseUrl;
     this._headers = headers;
@@ -96,21 +94,3 @@ class Api {
     });
   }
 }
-
-export const api = new Api({
-  baseUrl: url,
-  headers: {
-    authorization: token,
-    "Content-Type": "application/json",
-  },
-});
-
-
-  
-
-
-
-  
-
-  
-  

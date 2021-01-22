@@ -33,10 +33,18 @@ import Section from "../components/Section.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
-import { api } from "../components/Api.js";
+import Api from "../components/Api.js";
 import PopupDelete from "../components/PopupDelete.js";
 
 let profileId;
+
+const api = new Api({
+  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-19',
+  headers: {
+    authorization: '8810cbf5-561f-43a7-80aa-5fde39152fe1',
+    "Content-Type": "application/json",
+  },
+});
 
 function createCard(item) {
   const card = new Card(
@@ -138,6 +146,7 @@ const popupProfileForm = new PopupWithForm({
       .editUserInfo(popupProfileName.value, popupJobName.value)
       .then((res) => {
         user.setUserInfo(res);
+        popupProfileForm.close();
       })
       .catch((err) => {
         console.log(err);
@@ -188,11 +197,11 @@ formPlaceValidator.enableValidation();
 formProfileValidator.enableValidation();
 
 popupOpenButton.addEventListener("click", () => {
-  user.getUserInfo();
-  editPopupSubmit.classList.add(validationConfig.inactiveButtonClass);
-  editPopupSubmit.setAttribute("disabled", true);
+  const userData = user.getUserInfo();
   popupProfileForm.open(editPopup);
   formProfileValidator.hideFormErrors();
+  popupProfileName.value = userData.name;
+  popupJobName.value = userData.title
 });
 
 popupOpenAddButton.addEventListener("click", () => {
@@ -212,13 +221,3 @@ contanerForAvatar.addEventListener("click", () => {
 });
 
 avatarPopupCloseButton.addEventListener("click", () => popupAvatarForm.close());
-
-
-
-
-
-
-
-
-
-

@@ -32,7 +32,6 @@ class Card {
     placeImage.src = this._link;
     placeImage.alt = this._name;
     this._element.querySelector(".element__subtitle").textContent = this._name;
-    this._likesAmount();
     this.setLikes(this._likes);
     this._displayCardRemoveButton();
     this._setEventListeners();
@@ -76,7 +75,6 @@ class Card {
       likeCount.classList.add("element_opened");
     } else {
       likeButton.classList.remove("element__group_like");
-      this._likesAmount();
     }
   }
 
